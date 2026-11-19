@@ -1,5 +1,5 @@
 // i18n.js
-// Planner text in English and Simplified Chinese. Halflight's EN / 中文 switch picks the language.
+// Planner text in English and Simplified Chinese. Apollo's EN / 中文 switch picks the language.
 
 const STR = {
   en: {
@@ -35,7 +35,7 @@ const STR = {
     headingFromCoords: 'This runway has no heading in the database; directions come from its end coordinates.',
     positionsTitle: 'Your positions', addTap: 'Add by tapping the map', addTapOn: 'Tap the map where you will stand…', myLoc: 'My location', fromSaved: 'From saved places', coords: 'Coordinates',
     coordsPrompt: 'Latitude, longitude (e.g. 1.3570, 104.0005):', namePrompt: 'Name this position:', posName: 'Position {n}', rename: 'Rename', remove: 'Delete', removeConfirm: 'Delete "{name}"?',
-    noPositions: 'No positions yet. Add one to see the light for it.', noSaved: 'No saved places in Halflight yet (use the ☆ on the Light tab).', badCoords: 'Please enter latitude, longitude.', locErr: 'Your location is not available here.',
+    noPositions: 'No positions yet. Add one to see the light for it.', noSaved: 'No saved places in Apollo yet (use the ☆ on the Light tab).', badCoords: 'Please enter latitude, longitude.', locErr: 'Your location is not available here.',
     mapNote: 'Map tiles need a connection. Runways from OurAirports.',
     geoTitle: 'Your position and the runway', distCentre: 'To the centre line', side: 'Side', sideText: 'Left of planes using {a}, right of planes using {b}',
     along: 'Along the runway', alongText: '{d} from the {end} end', beyond: 'Beyond the {end} end, {d} from it', underPath: 'You are under the approach/departure path: planes pass close to overhead, so you mostly see the belly and side light matters less.',
@@ -95,7 +95,7 @@ const STR = {
     headingFromCoords: '数据库中没有这条跑道的航向；方向由两端坐标计算。',
     positionsTitle: '你的位置', addTap: '在地图上点选添加', addTapOn: '在地图上点你要站的位置…', myLoc: '我的位置', fromSaved: '从收藏地点', coords: '坐标',
     coordsPrompt: '纬度, 经度（如 1.3570, 104.0005）：', namePrompt: '给这个位置命名：', posName: '位置 {n}', rename: '重命名', remove: '删除', removeConfirm: '删除“{name}”？',
-    noPositions: '还没有位置。添加一个即可查看光线。', noSaved: 'Halflight 中还没有收藏地点（在“光线”页点 ☆）。', badCoords: '请输入 纬度, 经度。', locErr: '此处无法获取你的位置。',
+    noPositions: '还没有位置。添加一个即可查看光线。', noSaved: 'Apollo 中还没有收藏地点（在“光线”页点 ☆）。', badCoords: '请输入 纬度, 经度。', locErr: '此处无法获取你的位置。',
     mapNote: '地图需要联网。跑道数据来自 OurAirports。',
     geoTitle: '你的位置与跑道', distCentre: '到跑道中线', side: '方位', sideText: '在使用 {a} 的飞机左侧，使用 {b} 的飞机右侧',
     along: '沿跑道', alongText: '距 {end} 端 {d}', beyond: '在 {end} 端之外，距其 {d}', underPath: '你在进近/离场航线下方：飞机几乎从头顶经过，主要拍到机腹，侧光影响较小。',

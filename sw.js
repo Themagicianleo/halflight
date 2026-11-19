@@ -1,7 +1,7 @@
-// Halflight service worker: keeps the app (and the Spotter's Light Planner) available offline.
+// Apollo service worker: keeps the app (and the Spotter's Light Planner) available offline.
 // Forecast, METAR and traffic requests go straight to the network; the page keeps its own saved
 // copies of the last forecast and METAR. Map tiles are never stored (OpenStreetMap's tile policy).
-const CACHE = "halflight-v1";
+const CACHE = "apollo-v1";
 const PLANNER = [
   "./planner/main.js", "./planner/ui.js", "./planner/config.js", "./planner/i18n.js", "./planner/geo.js", "./planner/light.js",
   "./planner/wind.js", "./planner/plan.js", "./planner/airports.js", "./planner/positions.js", "./planner/map.js",

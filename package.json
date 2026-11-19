@@ -1,5 +1,5 @@
 {
-  "name": "halflight",
+  "name": "apollo",
   "private": true,
   "description": "No dependencies. This file only tells Node that planner/*.js are ES modules, and names the test commands.",
   "type": "module",

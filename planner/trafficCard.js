@@ -11,7 +11,7 @@ import * as adsbLol from './sources/traffic-adsblol.js';
 import * as airplanesLive from './sources/traffic-airplaneslive.js';
 
 const PROVIDERS = { adsbLol, airplanesLive };
-const LS = window.Halflight;
+const LS = window.Apollo;
 const esc = LS.esc;
 
 export function trafficCard(ctx) {

@@ -36,7 +36,7 @@ def read_csv(name, folder):
         text = (Path(folder) / name).read_text(encoding="utf-8")
     else:
         print(f"Downloading {BASE + name}")
-        req = urllib.request.Request(BASE + name, headers={"User-Agent": "Halflight-build/1.0 (+https://github.com/Themagicianleo/halflight)"})
+        req = urllib.request.Request(BASE + name, headers={"User-Agent": "Apollo-build/1.0 (+https://github.com/Themagicianleo/apollo)"})
         text = urllib.request.urlopen(req, timeout=300).read().decode("utf-8")
     reader = csv.DictReader(io.StringIO(text))
     return reader

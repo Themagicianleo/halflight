@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { GET } from '../api/relay.js';
 
-const call = (url) => GET(new Request('https://halflight.vercel.app/api/relay?url=' + encodeURIComponent(url)));
+const call = (url) => GET(new Request('https://apollo.vercel.app/api/relay?url=' + encodeURIComponent(url)));
 
 test('refuses hosts that are not on the allow-list, and plain http', async () => {
   assert.equal((await call('https://example.com/')).status, 400);
@@ -17,7 +17,7 @@ test('forwards allowed providers with a User-Agent and passes the answer through
   const r = await call('https://aviationweather.gov/api/data/metar?ids=WSSS&format=json');
   assert.equal(r.status, 200);
   assert.equal(seen.u, 'https://aviationweather.gov/api/data/metar?ids=WSSS&format=json');
-  assert.match(seen.ua, /Halflight/);
+  assert.match(seen.ua, /Apollo/);
   assert.deepEqual(await r.json(), [{ icaoId: 'WSSS' }]);
   assert.match(r.headers.get('cache-control'), /s-maxage=300/);
 });

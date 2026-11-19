@@ -1,4 +1,4 @@
-/* planner.css: styles for the "Plane spotting" tab. Uses Halflight's colour variables (--surface, --gold, ...),
+/* planner.css: styles for the "Plane spotting" tab. Uses Apollo's colour variables (--surface, --gold, ...),
    so light and dark mode follow the app automatically. Styled to match iOS. */
 .pl-search { display: flex; flex-direction: column; gap: 4px; }
 .pl-search input { width: 100%; font: inherit; font-size: 17px; padding: 9px 12px; border-radius: 10px; border: 0; background: var(--fill); color: var(--fg); -webkit-appearance: none; appearance: none; }

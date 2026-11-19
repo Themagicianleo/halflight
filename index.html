@@ -7,12 +7,12 @@
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Halflight">
+<meta name="apple-mobile-web-app-title" content="Apollo">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Golden hour, blue hour, sun direction and sky forecast for photographers.">
 <style>html,body{margin:0}body{font-size:14px}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head><body>
-<title>Halflight</title>
+<title>Apollo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f7">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
@@ -293,10 +293,10 @@ body:has(#tabs:not([hidden])) .wrap { padding-bottom: calc(110px + env(safe-area
   <div class="top">
     <div class="brand">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="14" r="5" fill="var(--gold)"/><path d="M2 17h20" stroke="var(--fg)" stroke-width="2" stroke-linecap="round"/><path d="M12 3v3M4.5 7l2 2M19.5 7l-2 2" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/></svg>
-      <span class="brand-name">Halflight</span>
+      <span class="brand-name">Apollo</span>
     </div>
     <div class="seg" role="group" data-i18n-aria="langAria" aria-label="Language"><button id="langEn" lang="en">EN</button><button id="langZh" lang="zh-CN">中文</button></div>
-    <button class="iconbtn" id="installBtn" hidden data-i18n-title="installTitle" title="Install Halflight on this device">
+    <button class="iconbtn" id="installBtn" hidden data-i18n-title="installTitle" title="Install Apollo on this device">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span data-i18n="install">Install</span>
     </button>
@@ -520,7 +520,7 @@ const store = {
 // ---------- language ----------
 const STR = {
   en: {
-    install: "Install", installTitle: "Install Halflight on this device", save: "Save this place", locateTitle: "Use my location",
+    install: "Install", installTitle: "Install Apollo on this device", save: "Save this place", locateTitle: "Use my location",
     locate: "Locate", locating: "Locating…", loading: "Loading…", localTime: "Local time",
     searchPh: "Search a place, or paste coordinates like 36.1, -112.1", searchAria: "Search location", saved: "Saved places", ideas: "Ideas",
     prevDay: "Previous day", nextDay: "Next day", today: "Today", tomorrow: "Tomorrow", yesterday: "Yesterday", inDays: "in {n} days", daysAgo: "{n} days ago",
@@ -540,7 +540,7 @@ const STR = {
     horizon: "{d} horizon", sunrise: "Sunrise", sunset: "Sunset", azimuthOf: "Azimuth {a}° {d}",
     nowAt: "Now · {t}", pathDay: "Path for this day", azimuth: "Azimuth", elevation: "Elevation", shadows: "Shadows", xHeight: "× height", sunDown: "Sun down",
     lightNow: "Light now", solarNoon: "Solar noon", degHigh: "{a}° high", dayLength: "Day length",
-    wxErr: "The forecast couldn't load. If you're viewing this inside the claude.ai preview, outside network requests are blocked there; open the hosted copy of Halflight for live weather. Otherwise check your connection and refresh.",
+    wxErr: "The forecast couldn't load. If you're viewing this inside the claude.ai preview, outside network requests are blocked there; open the hosted copy of Apollo for live weather. Otherwise check your connection and refresh.",
     wxLoading: "Loading forecast…", wxSaved: "You're offline. Showing the forecast saved {d}.", barL: "L", barM: "M", barH: "H", visShort: "vis", beyond16Day: "This day is beyond the 16-day forecast.",
     now: "Now", midday: "At midday", airErrBoth: "Air quality couldn't load. Check your connection, or open the hosted app if you're in the claude.ai preview.",
     air5: "The air quality forecast covers the next 5 days.", airLoading: "Loading air quality…", airErr: "Air quality couldn't load right now.", usAqi: "US AQI",
@@ -552,7 +552,7 @@ const STR = {
     nExample: "Showing an example place. Tap Locate to use where you are, or tap the place name to search.",
     nPreview: "Location is blocked inside the claude.ai preview. Open the hosted app (GitHub Pages or Vercel) to use where you are.",
     nHttps: "Location needs the secure address: {url}. You can also search for a place.",
-    nDeniedIos: "Location permission is off. Turn it on in Settings → Privacy & Security → Location Services → Safari Websites (or Halflight) → While Using the App, then tap Locate. Or search for a place.",
+    nDeniedIos: "Location permission is off. Turn it on in Settings → Privacy & Security → Location Services → Safari Websites (or Apollo) → While Using the App, then tap Locate. Or search for a place.",
     nDenied: "Location permission is off for this site. Tap the icon to the left of the address bar (or long-press the app icon → App info) → Permissions → Location → Allow, then tap Locate. Or search for a place.",
     nTimeout: "Finding your location took too long. Make sure Location (GPS) is switched on, move near a window or outside, then tap Locate again. Or search for a place.",
     nUnavail: "Your phone couldn't work out where you are. Switch on Location (GPS) in your phone's settings, then tap Locate. Or search for a place.",
@@ -575,7 +575,7 @@ const STR = {
     cN: "N", cE: "E", cS: "S", cW: "W", langAria: "Language", tabLight: "Light", tabPlanner: "Plane spotting"
   },
   zh: {
-    install: "安装", installTitle: "将 Halflight 安装到此设备", save: "收藏此地点", locateTitle: "使用我的位置",
+    install: "安装", installTitle: "将 Apollo 安装到此设备", save: "收藏此地点", locateTitle: "使用我的位置",
     locate: "定位", locating: "定位中…", loading: "加载中…", localTime: "当地时间",
     searchPh: "搜索地点，或粘贴坐标，如 36.1, -112.1", searchAria: "搜索地点", saved: "已收藏地点", ideas: "推荐地点",
     prevDay: "前一天", nextDay: "后一天", today: "今天", tomorrow: "明天", yesterday: "昨天", inDays: "{n} 天后", daysAgo: "{n} 天前",
@@ -595,7 +595,7 @@ const STR = {
     horizon: "{d}方向", sunrise: "日出", sunset: "日落", azimuthOf: "方位角 {a}° {d}",
     nowAt: "现在 · {t}", pathDay: "当天太阳轨迹", azimuth: "方位角", elevation: "高度角", shadows: "影长", xHeight: "× 物高", sunDown: "太阳已落",
     lightNow: "当前光线", solarNoon: "正午", degHigh: "高 {a}°", dayLength: "日照时长",
-    wxErr: "预报无法加载。如果你在 claude.ai 预览中查看，那里会拦截外部网络请求；请打开托管版 Halflight 查看实时天气。否则请检查网络后刷新。",
+    wxErr: "预报无法加载。如果你在 claude.ai 预览中查看，那里会拦截外部网络请求；请打开托管版 Apollo 查看实时天气。否则请检查网络后刷新。",
     wxLoading: "正在加载预报…", wxSaved: "当前离线，显示 {d} 保存的预报。", barL: "低", barM: "中", barH: "高", visShort: "能见", beyond16Day: "这一天超出 16 天预报范围。",
     now: "现在", midday: "正午时分", airErrBoth: "空气质量无法加载。请检查网络；如果你在 claude.ai 预览中，请打开托管版应用。",
     air5: "空气质量预报只覆盖未来 5 天。", airLoading: "正在加载空气质量…", airErr: "暂时无法加载空气质量。", usAqi: "美国 AQI",
@@ -607,7 +607,7 @@ const STR = {
     nExample: "当前显示的是示例地点。点“定位”使用你所在的位置，或点地点名称进行搜索。",
     nPreview: "claude.ai 预览中无法使用定位。请打开托管版应用（GitHub Pages 或 Vercel）使用你的位置。",
     nHttps: "定位需要安全地址：{url}。也可以搜索地点。",
-    nDeniedIos: "定位权限已关闭。请在 设置 → 隐私与安全性 → 定位服务 → Safari 网站（或 Halflight）→ 使用 App 期间 中开启，然后点“定位”。也可以搜索地点。",
+    nDeniedIos: "定位权限已关闭。请在 设置 → 隐私与安全性 → 定位服务 → Safari 网站（或 Apollo）→ 使用 App 期间 中开启，然后点“定位”。也可以搜索地点。",
     nDenied: "此网站的定位权限已关闭。点地址栏左侧的图标（或长按应用图标 → 应用信息）→ 权限 → 位置信息 → 允许，然后点“定位”。也可以搜索地点。",
     nTimeout: "定位超时。请确认已开启定位（GPS），靠近窗户或到户外，然后再点“定位”。也可以搜索地点。",
     nUnavail: "手机无法确定你的位置。请在手机设置中开启定位（GPS），然后点“定位”。也可以搜索地点。",
@@ -1200,14 +1200,14 @@ document.addEventListener("visibilitychange", () => { if (document.visibilitySta
 
 // ---------- shared with the Spotter's Light Planner (planner/*.js) ----------
 // The planner reuses these instead of having its own copies. Read-only access to state.
-window.Halflight = {
+window.Apollo = {
   sunPos, store, esc, fmtTime, fmtHour, fmtDur, partsIn, zonedMidnight, ymdAdd, validTz, DEVICE_TZ,
   fetchForecast, wxFrom, skyRead, wmo,
   lang: () => LANG, loc: LOC, h12: () => S.h12, favs: () => S.favs.map(placeLabelFav),
   onLang: fn => langListeners.push(fn), iOS, installable
 };
 function placeLabelFav(f) { return { name: placeLabel(f), lat: f.lat, lng: f.lng }; }
-document.dispatchEvent(new Event("halflight-ready"));
+document.dispatchEvent(new Event("apollo-ready"));
 })();
 </script>
 
