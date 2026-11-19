@@ -14,7 +14,7 @@ export async function GET(request) {
   let r;
   try {
     r = await fetch(target, {
-      headers: { 'User-Agent': 'Apollo/1.0 (+https://github.com/Themagicianleo/apollo)', Accept: 'application/json' },
+      headers: { 'User-Agent': 'ApollosLight/1.0 (+https://github.com/Themagicianleo/apollos-light)', Accept: 'application/json' },
       signal: AbortSignal.timeout(12000),
     });
   } catch {

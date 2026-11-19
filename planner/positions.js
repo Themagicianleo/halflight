@@ -1,6 +1,6 @@
 // positions.js
 // YOUR spotting positions, per airport. The app never suggests positions: it only stores what you add.
-// Saved with Apollo's own storage helper (localStorage, this browser only).
+// Saved with the app's own storage helper (localStorage, this browser only).
 
 const KEY = 'planner:positions'; // { [airportIdent]: [{ id, name, lat, lon }] }
 const SEL = 'planner:selected'; // { [airportIdent]: id }

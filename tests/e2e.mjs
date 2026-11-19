@@ -8,7 +8,7 @@ async function phase1(browser) {
   const page = await newPage(browser);
   await page.goto(BASE);
   await page.waitForSelector('#tabs:not([hidden])');
-  check('[light tab] existing Apollo still renders (sun card, forecast)', await page.locator('#sunStats .stat').count() > 0 && await page.locator('#weather .hour').count() > 0);
+  check('[light tab] existing Apollo’s Light still renders (sun card, forecast)', await page.locator('#sunStats .stat').count() > 0 && await page.locator('#weather .hour').count() > 0);
   await page.click('#tabPlanner');
   await page.waitForSelector('#plAirportInfo .pl-airport-name');
   check('[planner] defaults to Singapore Changi from OurAirports', (await page.textContent('#plAirportInfo')).includes('Singapore Changi Airport') && (await page.textContent('#plAirportInfo')).includes('WSSS / SIN'));

@@ -34,7 +34,7 @@ export function cloudFactor(w, cfg) {
 }
 
 // The whole score for one moment.
-//   sun: { az, alt } from Apollo's sunPos();  planeToCameraDeg from geo.runwayRelation()
+//   sun: { az, alt } from the app's sunPos();  planeToCameraDeg from geo.runwayRelation()
 //   clouds: { low, mid, high } for that hour, or null
 export function lightScore(sun, planeToCameraDeg, clouds, cfg) {
   const delta = Math.abs(angleDiff(sun.az, planeToCameraDeg));

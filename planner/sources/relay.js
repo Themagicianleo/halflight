@@ -1,7 +1,7 @@
 // relay.js
 // Fetch through the SkyWatch Cloudflare relay. Needed for providers that don't allow web pages on
 // other sites to read their answers (CORS): aviationweather.gov, adsb.lol, airplanes.live (tested
-// 22 Oct 2026 from the live Apollo page: all three failed directly, all worked via the relay).
+// 22 Oct 2026 from the live Apollo’s Light page: all three failed directly, all worked via the relay).
 // The relay only forwards to an allow-list of hosts. Which relay is used depends on the site (see config.js).
 
 import { CONFIG } from '../config.js';

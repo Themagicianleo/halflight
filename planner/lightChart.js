@@ -1,6 +1,6 @@
 // lightChart.js
 // The hourly light chart (SVG) and its table. One bar per hour; height = score, colour = rating.
-// All text that came from data is escaped with Apollo's esc().
+// All text that came from data is escaped with the app's esc().
 
 import { t } from './i18n.js';
 

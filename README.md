@@ -1,4 +1,4 @@
-# Apollo
+# Apollo’s Light
 
 A photographer's light planner in a single web page: blue and golden hour times, sunrise/sunset direction, a sky chart of the sun's path, an hourly cloud-layer forecast with a rough "sky color" read, moon phase, and tonight's darkest window.
 
@@ -22,7 +22,7 @@ score, the runway likely in use, which aircraft are arriving or departing, and t
 ### How to use it
 1. Open the **Plane spotting** tab. Changi is preselected; search for another airport by ICAO, IATA, name or city.
 2. Add your position: tap **Add by tapping the map**, use **My location**, type **Coordinates**, or pick one of
-   Apollo's **saved places**. Drag the marker to fine-tune it. Pick a runway (the nearest one is used by default).
+   the app's **saved places**. Drag the marker to fine-tune it. Pick a runway (the nearest one is used by default).
 3. Read the cards: *Your position and the runway* (calculated), *Light on aircraft, by hour* (estimate, up to 7 days
    ahead, with a cloud strip under the bars and a table of every number behind it), *Conditions and suggestions*,
    *Wind and runway in use*, and *Live traffic*.
@@ -30,7 +30,7 @@ score, the runway likely in use, which aircraft are arriving or departing, and t
    high), visibility, rain chance and weather; for the current hour, what the latest METAR measured; and suggestions.
 
 ### The maths, step by step
-1. **Sun position** comes from Apollo's existing `sunPos()` (azimuth = compass direction, altitude = height).
+1. **Sun position** comes from the app's existing `sunPos()` (azimuth = compass direction, altitude = height).
 2. **Runway geometry.** Around the airport the Earth is treated as flat (under 0.1% error within 20 km): latitude
    and longitude become metres east (x) and north (y). The runway runs from end A to end B; `u` is the unit
    vector A→B. For your position P:
@@ -85,7 +85,7 @@ from the wind, and the day's best time.
 |---|---|---|---|---|---|
 | [OurAirports](https://ourairports.com/data/) `airports.csv`, `runways.csv` | Airports, runway end coordinates, headings (true), lengths | No | Static file | Public domain, no guarantee of accuracy; credit requested | Built into `data/airports.json` |
 | [NOAA Aviation Weather Center](https://aviationweather.gov/data/api/) METAR | Wind for the runway estimate | No | 100 requests/min; custom User-Agent requested | US public domain ([NWS disclaimer](https://www.weather.gov/disclaimer)); not for flight planning | Via the relay: the API doesn't allow browser requests from other sites (CORS) |
-| [Open-Meteo](https://open-meteo.com) | Cloud forecast (Apollo's existing forecast code) | No | Generous | Free for non-commercial use, credit required | Direct |
+| [Open-Meteo](https://open-meteo.com) | Cloud forecast (the app's existing forecast code) | No | Generous | Free for non-commercial use, credit required | Direct |
 | [adsb.lol](https://adsb.lol) `/v2/point` | Live traffic | No (a key "will be required in the future") | Real headers: 4/s, 60/min, **500/day**; the planner polls every 20 s and pauses after 10 min | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/), credit required; the open API is marked deprecated | Via the relay (no CORS header) |
 | [airplanes.live](https://airplanes.live) | Alternative traffic provider (off by default) | ? | ? | **Not verified** (its terms page blocks automated readers) | Via the relay |
 | [OpenStreetMap](https://www.openstreetmap.org/copyright) tiles | Map background | No | [Tile usage policy](https://operations.osmfoundation.org/policies/tiles/) | ODbL, credit on the map | Direct; never stored offline |
@@ -128,12 +128,12 @@ source are explained above so they can be checked.
 - `build.sh` wraps it into `index.html`, the standalone page GitHub Pages serves, and adds the planner (`planner/`, `vendor/leaflet/`). Run it after editing `src/app.html` and commit both.
 - `planner/`: the Spotter's Light Planner. `config.js` (every tunable number), `geo.js`, `light.js`, `wind.js`, `traffic.js`, `plan.js` (pure maths, tested in `tests/`), `airports.js`, `positions.js`, `map.js`, `ui.js`, `windCard.js`, `trafficCard.js`, `lightChart.js`, `i18n.js` (EN / 中文), and `sources/` (one file per data provider, so switching is one line in `config.js`).
 - `data/airports.json`: built from OurAirports by `scripts/build_airports.py`.
-- The planner reuses Apollo's own sun maths, time zones, storage, saved places and Open-Meteo forecast through `window.Apollo` (defined at the end of `src/app.html`); nothing is copied.
+- The planner reuses the app's own sun maths, time zones, storage, saved places and Open-Meteo forecast through `window.ApollosLight` (defined at the end of `src/app.html`); nothing is copied.
 
 ## Hosting
 
 **Vercel** (also deployed there): the repository is imported into Vercel once (vercel.com → Add New → Project →
-`apollo` → Deploy, no settings to change), and every push to `main` then deploys automatically. `vercel.json`
+`apollos-light` → Deploy, no settings to change), and every push to `main` then deploys automatically. `vercel.json`
 serves the files as they are (no build step). The SkyWatch relay only answers the GitHub Pages address, so on Vercel
 the planner uses its own relay, `api/relay.js`, a serverless function that only forwards to aviationweather.gov,
 api.adsb.lol and api.airplanes.live (tested in `tests/relay.test.mjs`).

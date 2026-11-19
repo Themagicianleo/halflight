@@ -8,7 +8,7 @@ import { t } from './i18n.js';
 import { likelyEnd } from './wind.js';
 import { latestMetar } from './sources/metar-awc.js';
 
-const LS = window.Apollo;
+const LS = window.ApollosLight;
 const esc = LS.esc;
 
 export function windCard(ctx) {

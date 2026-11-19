@@ -11,7 +11,7 @@ cd "$(dirname "$0")"
   printf '<link rel="icon" href="icons/icon.svg" type="image/svg+xml">\n'
   printf '<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">\n'
   printf '<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">\n'
-  printf '<meta name="apple-mobile-web-app-title" content="Apollo">\n'
+  printf '<meta name="apple-mobile-web-app-title" content="Apollo’s Light">\n'
   printf '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\n'
   printf '<meta name="description" content="Golden hour, blue hour, sun direction and sky forecast for photographers.">\n'
   printf '<style>html,body{margin:0}body{font-size:14px}img{max-width:100%%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>\n'
