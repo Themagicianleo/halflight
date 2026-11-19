@@ -1,5 +1,5 @@
 {
-  "name": "light-scout",
+  "name": "halflight",
   "private": true,
   "description": "No dependencies. This file only tells Node that planner/*.js are ES modules, and names the test commands.",
   "type": "module",

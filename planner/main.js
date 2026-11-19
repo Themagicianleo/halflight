@@ -1,12 +1,12 @@
 // main.js
-// Entry point for the Spotter's Light Planner (loaded by index.html after the Light Scout app).
+// Entry point for the Spotter's Light Planner (loaded by index.html after the Halflight app).
 // Shows the tab bar and starts the planner the first time its tab is opened.
 
 import { setLangSource } from './i18n.js';
 
 function init() {
-  const LS = window.LightScout;
-  if (!LS) return; // Light Scout didn't start (should not happen)
+  const LS = window.Halflight;
+  if (!LS) return; // Halflight didn't start (should not happen)
   setLangSource(LS.lang);
   const tabs = document.getElementById('tabs');
   const views = { light: document.getElementById('viewLight'), planner: document.getElementById('viewPlanner') };
@@ -39,5 +39,5 @@ function init() {
   if (LS.store.get('planner:tab', 'light') === 'planner') show('planner');
 }
 
-if (window.LightScout) init();
-else document.addEventListener('lightscout-ready', init, { once: true });
+if (window.Halflight) init();
+else document.addEventListener('halflight-ready', init, { once: true });

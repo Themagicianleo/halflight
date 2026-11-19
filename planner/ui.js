@@ -1,7 +1,7 @@
 // ui.js
 // The "Plane spotting" tab: airport, your positions on a map, geometry, and the hourly light chart.
 // The wind card (windCard.js) and traffic card (trafficCard.js) plug in through the same `ctx`.
-// Reuses Light Scout's own functions (window.LightScout): sunPos, store, esc, time formatting,
+// Reuses Halflight's own functions (window.Halflight): sunPos, store, esc, time formatting,
 // time zones and the Open-Meteo forecast. Nothing from the network is inserted as raw HTML.
 
 import { CONFIG } from './config.js';
@@ -13,7 +13,7 @@ import { dayPlan } from './plan.js';
 import { lightChartSvg, legendHtml, lightTableHtml } from './lightChart.js';
 import { createMap } from './map.js';
 
-const LS = window.LightScout;
+const LS = window.Halflight;
 const $ = (id) => document.getElementById(id);
 const esc = LS.esc;
 const positions = makePositions(LS.store);
@@ -23,7 +23,7 @@ const P = {
   airport: null,
   runwayPick: LS.store.get('planner:runway', {}), // { [airport]: runway name } when chosen by hand
   dayOffset: 0,
-  forecast: null, // Open-Meteo answer for the airport (via Light Scout's fetchForecast)
+  forecast: null, // Open-Meteo answer for the airport (via Halflight's fetchForecast)
   forecastFor: null,
   forecastSavedAt: null,
   tz: null, // the airport's time zone, from the forecast
@@ -138,7 +138,7 @@ function currentRunway() {
   return [...a.runways].sort((x, y) => (y.lengthFt ?? 0) - (x.lengthFt ?? 0))[0];
 }
 
-// ---------- forecast (reuses Light Scout's fetchForecast; keeps a copy for offline) ----------
+// ---------- forecast (reuses Halflight's fetchForecast; keeps a copy for offline) ----------
 async function loadForecast() {
   const a = P.airport;
   if (!a || P.forecastFor === a.ident) return;
@@ -200,7 +200,7 @@ function wirePositions() {
     if (!m || Math.abs(+m[1]) > 90 || Math.abs(+m[2]) > 180) return alert(t('badCoords'));
     addPosition(+m[1], +m[2]);
   };
-  // Light Scout's saved places can become spotting positions.
+  // Halflight's saved places can become spotting positions.
   $('plFromSaved').onclick = () => {
     const box = $('plSaved');
     const favs = LS.favs();
@@ -265,7 +265,7 @@ function dayStart() {
   return LS.zonedMidnight(ymd.y, ymd.m, ymd.d, z);
 }
 
-// One forecast hour (clouds, visibility, rain chance, weather code) from Light Scout's wxFrom().
+// One forecast hour (clouds, visibility, rain chance, weather code) from Halflight's wxFrom().
 const weatherAt = (ms) => LS.wxFrom(P.forecast, ms);
 
 function buildPlan() {

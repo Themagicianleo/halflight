@@ -1,5 +1,5 @@
 // plan.js
-// Puts the pieces together for one day: for each hour, where the sun is (CALCULATED by Light Scout's
+// Puts the pieces together for one day: for each hour, where the sun is (CALCULATED by Halflight's
 // sunPos), what the forecast says about clouds, and the light score (ESTIMATE) for planes flying
 // each way along the chosen runway, as seen from your position.
 
@@ -10,7 +10,7 @@ const HOUR = 3600e3;
 
 // airport: from airports.js; runway: one of airport.runways; position: { lat, lon }
 // dayStart: midnight at the airport (ms); sunPos(t, lat, lon) and weatherAt(t) are passed in.
-// weatherAt returns one forecast hour from Light Scout's wxFrom() ({ low, mid, high, vis, pp, code, ... }) or null.
+// weatherAt returns one forecast hour from Halflight's wxFrom() ({ low, mid, high, vis, pp, code, ... }) or null.
 export function dayPlan({ airport, runway, position, dayStart, sunPos, weatherAt, cfg }) {
   const proj = makeProjection(airport.lat, airport.lon);
   const rel = runwayRelation(proj, runway, position.lat, position.lon);

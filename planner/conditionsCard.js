@@ -1,6 +1,6 @@
 // conditionsCard.js
 // "Conditions and suggestions" for the hour you pick on the light chart (tap a bar):
-//   - forecast for that hour (Open-Meteo via Light Scout): cloud low/mid/high, visibility, rain chance, weather
+//   - forecast for that hour (Open-Meteo via Halflight): cloud low/mid/high, visibility, rain chance, weather
 //   - for the current hour, what the latest METAR actually measured (visibility, cloud, weather)
 //   - suggestions from planner/advice.js, each with the numbers behind it (ESTIMATES)
 
@@ -9,7 +9,7 @@ import { t } from './i18n.js';
 import { advise } from './advice.js';
 import { parseConditions } from './sources/metar-awc.js';
 
-const LS = window.LightScout;
+const LS = window.Halflight;
 const esc = LS.esc;
 const HOUR = 3600e3;
 

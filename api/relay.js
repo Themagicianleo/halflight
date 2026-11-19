@@ -14,7 +14,7 @@ export async function GET(request) {
   let r;
   try {
     r = await fetch(target, {
-      headers: { 'User-Agent': 'LightScout/1.0 (+https://github.com/Themagicianleo/light-scout)', Accept: 'application/json' },
+      headers: { 'User-Agent': 'Halflight/1.0 (+https://github.com/Themagicianleo/halflight)', Accept: 'application/json' },
       signal: AbortSignal.timeout(12000),
     });
   } catch {
