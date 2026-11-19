@@ -2,7 +2,7 @@
 // Fetch through the SkyWatch Cloudflare relay. Needed for providers that don't allow web pages on
 // other sites to read their answers (CORS): aviationweather.gov, adsb.lol, airplanes.live (tested
 // 22 Oct 2026 from the live Light Scout page: all three failed directly, all worked via the relay).
-// The relay only forwards to an allow-list of hosts and only answers themagicianleo.github.io.
+// The relay only forwards to an allow-list of hosts. Which relay is used depends on the site (see config.js).
 
 import { CONFIG } from '../config.js';
 

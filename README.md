@@ -132,5 +132,13 @@ source are explained above so they can be checked.
 
 ## Hosting
 
+**Vercel** (also deployed there): the repository is imported into Vercel once (vercel.com → Add New → Project →
+`light-scout` → Deploy, no settings to change), and every push to `main` then deploys automatically. `vercel.json`
+serves the files as they are (no build step). The SkyWatch relay only answers the GitHub Pages address, so on Vercel
+the planner uses its own relay, `api/relay.js`, a serverless function that only forwards to aviationweather.gov,
+api.adsb.lol and api.airplanes.live (tested in `tests/relay.test.mjs`).
+
+**GitHub Pages**:
+
 GitHub Pages serves `index.html` from the `main` branch root (Settings → Pages → Deploy from a branch → `main` / `/ (root)`), along with `manifest.webmanifest`, `sw.js` and `icons/`, which make it installable.
 Install on a phone: open the Pages link, then tap **Install** in the top bar (Android/Chrome), or Share → **Add to Home Screen** (iPhone/Safari). It opens full-screen, works offline, and keeps the last forecast for when you have no signal.

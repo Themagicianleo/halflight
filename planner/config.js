@@ -5,9 +5,12 @@
 export const CONFIG = {
   defaultAirport: 'WSSS', // Singapore Changi (checked against OurAirports, see README)
 
-  // METAR and live traffic go through the SkyWatch Cloudflare relay: those providers don't allow
-  // web pages on other sites to read their answers (CORS). It only answers themagicianleo.github.io.
-  relayBase: 'https://spotters-relay.maotianze.workers.dev/?url=',
+  // METAR and live traffic go through a relay: those providers don't allow web pages on other sites
+  // to read their answers (CORS). The SkyWatch Cloudflare relay only answers themagicianleo.github.io,
+  // so GitHub Pages (and local testing) use it, and the Vercel copy uses its own api/relay.js.
+  relayBase: /(^|\.)github\.io$|^(localhost|127\.0\.0\.1)$/.test(globalThis.location?.hostname ?? 'localhost')
+    ? 'https://spotters-relay.maotianze.workers.dev/?url='
+    : '/api/relay?url=',
 
   // ---- Light quality (an ESTIMATE built on calculated sun and geometry) ----
   light: {
